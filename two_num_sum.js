@@ -30,24 +30,6 @@ function twoNumberSum1(array, targetSum) {
 // console.log(twoNumberSum1([3, 5, -4, 8, 11, 1, -1, 6], 10));
 
 // VERSION 2
-function twoNumberSum2(array, targetSum) {
-    let nums = {};
-
-    for (const num of array) {
-        const otherNum = targetSum - num;
-        if (otherNum in nums) { // if otherNum is found in nums hash
-            return [otherNum, num];
-        } else {
-            nums[num] = true;   // we can store it as whatever
-        }
-    }
-
-    return [];
-}
-
-// console.log(twoNumberSum2([3, 5, -4, 8, 11, 1, -1, 6], 10));
-
-// VERSION 2
 // time = O(n) >> n represents the lenght of our input array
 // we're constantly traversing thru the hash just doing calculations
 // space = O(n) >> we are adding value to the hash table
@@ -56,10 +38,10 @@ function twoNumberSum2(array, targetSum) {
 
     for (const num of array) {
         let otherNum = targetSum - num;
-        if (otherNum in nums) {
+        if (otherNum in nums) { // if otherNum is found in nums hash
             return [otherNum, num]
         } else {
-            nums[num] = true;
+            nums[num] = true;   // we can store it as whatever
         }
     }
 
