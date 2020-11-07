@@ -31,20 +31,57 @@ function twoNumberSum1(array, targetSum) {
 
 // VERSION 2
 function twoNumberSum2(array, targetSum) {
+    let nums = {};
 
-    for (let i = 0; i < array.length; i++) {
-        let num1 = array[i];
-        for (let j = i + 1; j < array.length; j++) {
-            num2 = array[j];
-
-            if (num1 + num2 === targetSum) {
-                return [num1, num2]
-            }
+    for (const num of array) {
+        const otherNum = targetSum - num;
+        if (otherNum in nums) {
+            return [otherNum, num];
+        } else {
+            nums[num] = true;
         }
     }
 
     return [];
-  
 }
 
-console.log(twoNumberSum2([3, 5, -4, 8, 11, 1, -1, 6], 10));
+// console.log(twoNumberSum2([3, 5, -4, 8, 11, 1, -1, 6], 10));
+
+// VERSION 2
+function twoNumberSum2(array, targetSum) {
+    let nums = {};
+
+    for (const num of array) {
+        let otherNum = targetSum - num;
+        if (otherNum in nums) {
+            return [otherNum, num]
+        } else {
+            nums[num] = true;
+        }
+    }
+
+    return [];
+}
+
+// console.log(twoNumberSum2([3, 5, -4, 8, 11, 1, -1, 6], 10));
+
+// VERSION 3
+function twoNumberSum3(array, targetSum) {
+    array.sort((a, b) => a - b);    // [ -4, -1, 1, 3, 5, 6, 8, 11 ]
+    let left = 0;
+    let right = array.length - 1;
+    while (left < right) {
+        const currentSum = array[left] + array[right];
+        if (currentSum === targetSum) {
+            return [array[left], array[right]]
+        } else if (currentSum < targetSum) {
+            left++;
+        } else if (currentSum > targetSum) {
+            right--;
+        }
+    }
+
+    return [];
+}
+
+console.log(twoNumberSum3([3, 5, -4, 8, 11, 1, -1, 6], 10));
