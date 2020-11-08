@@ -7,7 +7,7 @@
 // Sample
 // array = [3, 5, -4, 8, 11, 1, -1, 6]
 // targetSum = 10
-// expected: [-1, 11]
+// output: [-1, 11]
 
 // VERSION 1
 function twoNumberSum1(array, targetSum) {

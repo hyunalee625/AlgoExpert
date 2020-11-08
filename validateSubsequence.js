@@ -6,7 +6,7 @@
 // Sample
 // array = [5, 1, 22, 25, 6, -1, 8, 10]
 // subsequence = [1, 6, -1, 10]
-// expected = true
+// output: true
 
 // time = O(n)  >> looping once and breaking out of it
 // space = O(1) >> not storing the data anywhere else
@@ -16,20 +16,22 @@ function isValidSubsequence1(array, subsequence) {
     let subIdx = 0;
 
     while (arrIdx < array.length && subIdx < subsequence.length) {
-        if (array[arrIdx] === subsequence[subIdx]) {    // if the array[arrIdx] is equal to subsequence[subIdx] then we increment subIdx
-            subIdx++;
-            arrIdx++;   // arrIdx increments regardless whether array[arrIdx] === subsequence[subIdx] is true or not
+        if (array[arrIdx] === subsequence[subIdx]) { 
+            subIdx++;  // if the array[arrIdx] is equal to subsequence[subIdx] then we increment subIdx
         }
+        arrIdx++;   // arrIdx increments regardless whether array[arrIdx] === subsequence[subIdx] is true or not
     }
 
     return subIdx = subsequence.length
 }
 
+console.log(isValidSubsequence1([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10]))
+
 // FOR LOOP 
 function isValidSubsequence2(array, subsequence) {
     let subIdx = 0;
     for (const value of array) {
-        if (subIdx === subsequence.length) {    // we need this to set boundaries
+        if (subIdx === subsequence.length) {    // we need this to set boundaries (once we reach the last subIdx, we break)
         break;
         }
         if (subsequence[subIdx] === value) {
@@ -40,4 +42,4 @@ function isValidSubsequence2(array, subsequence) {
     return subIdx === subsequence.length
 }
 
-console.log(isValidSubsequence2([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10]))
+// console.log(isValidSubsequence2([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10]))
