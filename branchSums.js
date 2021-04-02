@@ -33,3 +33,5 @@ function calculateBranchSums(node, runningSum, sums) {
     calculateBranchSums(node.right, newRunningSum, sums);
 
 }
+
+
