@@ -25,7 +25,7 @@ function isValidSubsequence1(array, subsequence) {
     return subIdx = subsequence.length
 }
 
-console.log(isValidSubsequence1([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10]))
+// console.log(isValidSubsequence1([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10]))
 
 // FOR LOOP 
 function isValidSubsequence2(array, subsequence) {
