@@ -9,10 +9,10 @@ function generateDocument(chars, doc) {
 }
 
 function countCharFrequency(chararacter, target) {
-    let frequency = 0;
+    let frequency = 0
     for (const char of target) {
         if (char === chararacter) frequency++;
     }
 
-    return frequency;
+    return frequency
 }

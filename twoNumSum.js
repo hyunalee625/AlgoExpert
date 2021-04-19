@@ -68,7 +68,7 @@ function twoNumberSum3(array, targetSum) {
         }
     }
 
-    return [];
+    return []
 }
 
 // console.log(twoNumberSum3([3, 5, -4, 8, 11, 1, -1, 6], 10));
