@@ -35,3 +35,22 @@ function findClosestHelper(tree, target, closest) {
         return closest;
     }
 }
+
+function findClosestValueInBst(tree, target) {
+    return findClosestHelper(tree, target, Number.POSITIVE_INFINITY); // tree.value can be an infinity as well
+}
+
+function findClosestHelper(tree, target, closest) {
+    if (tree === null) return closest;
+    if (Math.abs(target - closest) > Math.abs(target - tree.value)) {   // if (|12 - infinity| > |12 - 10|)   >> true
+        closest = tree.value;   // closest = 10
+    }
+    if (target < tree.value) {  
+        return findClosestHelper(tree.left, target, tree.value)
+    } else if (target > tree.value) {   // if 12 is greater than 10, we eliminate the left side of the tree and focus on the right
+        // we elimite the left because the smaller the number, the greater the gap between the target and tree.value
+        return findClosestHelper(tree.right, target, closest)
+    } else {
+        return closest;
+    }
+}
