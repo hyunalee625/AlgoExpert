@@ -1,4 +1,5 @@
-// O(log(n)) time || O(log(n))  space
+// O(log(n)) time 
+// O(log(n))  space
 function binarySearch(arr, target) {
     return binarySearchHelper(arr, target, 0, arr.length - 1)
 }

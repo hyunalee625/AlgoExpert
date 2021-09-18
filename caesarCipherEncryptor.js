@@ -9,7 +9,7 @@ function caesarCipherEncryptor(str, key) {
     return newLetters;
 }
 
-function getNewLetter(letter, key) {
-    const newLetterCode = letter.charCodeAt() + key;
+function getNewLetter(letter, k) {
+    const newLetterCode = letter.charCodeAt() + k;
     return newLetterCode <= 122 ? String.fromCharCode(newLetterCode) : String.fromCharCode(96 + (newLetterCode % 122))
 }

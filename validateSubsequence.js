@@ -28,9 +28,9 @@ function isValidSubsequence1(array, subsequence) {
 // console.log(isValidSubsequence1([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10]))
 
 // FOR LOOP 
-function isValidSubsequence2(array, subsequence) {
+function isValidSubsequence2(arr, subsequence) {
     let subIdx = 0;
-    for (const value of array) {
+    for (const value of arr) {
         if (subIdx === subsequence.length) {    // we need this to set boundaries (once we reach the last subIdx, we break)
         break;
         }

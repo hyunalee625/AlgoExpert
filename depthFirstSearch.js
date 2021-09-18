@@ -26,12 +26,12 @@ class Node {
     return this;
   }
 
-  depthFirstSearch(array) {
-    array.push(this.name);
+  depthFirstSearch(arr) {
+    arr.push(this.name);
     for (const child of this.children) {
-        child.depthFirstSearch(array);
+        child.depthFirstSearch(arr);
     }
 
-    return array;
+    return arr;
   }
 }
