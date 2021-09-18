@@ -13,3 +13,5 @@ function getNewLetter(letter, k) {
     const newLetterCode = letter.charCodeAt() + k;
     return newLetterCode <= 122 ? String.fromCharCode(newLetterCode) : String.fromCharCode(96 + (newLetterCode % 122))
 }
+
+console.log(caesarCipherEncryptor('hello', 2))
